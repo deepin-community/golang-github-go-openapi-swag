@@ -1,15 +1,40 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-go-openapi-swag
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders:
+ Tim Potter <tpot@hpe.com>,
+ Anthony Fok <foka@debian.org>,
+ Guillem Jover <gjover@sipwise.com>,
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-golang,
+ golang-any (>= 2:1.19~),
+ golang-github-mailru-easyjson-dev (>= 0.7.7),
+ golang-github-stretchr-testify-dev (>= 1.8.4),
+ golang-gopkg-yaml.v3-dev (>= 3.0.1),
+Testsuite: autopkgtest-pkg-go
+Standards-Version: 4.7.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-go-openapi-swag
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-go-openapi-swag.git
+Homepage: https://github.com/go-openapi/swag
+XS-Go-Import-Path: github.com/go-openapi/swag
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-go-openapi-swag-dev
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ golang-github-mailru-easyjson-dev (>= 0.7.7),
+ golang-gopkg-yaml.v3-dev (>= 3.0.1),
+ ${misc:Depends},
+Description: goodie bag in use in the go-openapi projects
+ This package contains a bunch of helper functions for other
+ go-openapi projects.
+ .
+   * convert between value and pointers for builtin
+   * convert from string to builtin
+   * fast json concatenation
+   * search in path
+   * load from file or http
+   * name manglin
