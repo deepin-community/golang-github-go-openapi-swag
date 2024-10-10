@@ -1,5 +1,99 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-go-openapi-swag (1:0.23.0-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
+  * Switch to Standards-Version 4.7.0 (no changes needed).
+  * Wrap and sort -sat debian/copyright.
+  * Add myself to Uploaders.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Guillem Jover <gjover@sipwise.com>  Tue, 17 Sep 2024 19:31:56 +0200
+
+golang-github-go-openapi-swag (1:0.22.8-1) unstable; urgency=medium
+
+  * New upstream version 0.22.8
+  * Bump versioned dependencies as per go.mod
+
+ -- Anthony Fok <foka@debian.org>  Wed, 21 Feb 2024 09:46:10 -0700
+
+golang-github-go-openapi-swag (1:0.22.4-1) unstable; urgency=medium
+
+  * New upstream version 0.22.4
+
+ -- Anthony Fok <foka@debian.org>  Mon, 16 Oct 2023 14:01:01 -0600
+
+golang-github-go-openapi-swag (1:0.22.3-1) unstable; urgency=medium
+
+  * New upstream version 0.22.3
+  * Reorder fields in debian/control and debian/copyright
+  * Bump versioned dependencies as per go.mod
+  * Remove golang-github-stretchr-testify-dev from -dev dependency
+  * Bump Standards-Version to 4.6.2 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Wed, 11 Oct 2023 18:51:56 -0600
+
+golang-github-go-openapi-swag (1:0.21.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update debian/watch file.
+  * Update gbp configuration following Go Team new workflow.
+  * Use dh-sequence-golang instead of dh-golang and --with=golang.
+  * Set build directory to _build.
+  * Move license location on Debian systems into a Comment field.
+  * Remove ${shlibs:Depends} from -dev Depends field.
+  * Run wrap-and-sort -sat.
+  * Remove test failure skipping patch, fixed upstream.
+  * Add a debian/.gitignore file.
+
+ -- Guillem Jover <gjover@sipwise.com>  Sat, 12 Mar 2022 00:01:55 +0100
+
+golang-github-go-openapi-swag (1:0.19.15-1) unstable; urgency=medium
+
+  * New upstream version 0.19.15
+  * debian/watch: Update to version=4 and fix filenamemangle
+  * Replace build-dependency on golang-go with golang-any
+  * Revert "Disable test that fails on go >> 1.11"
+    The test no longer fails with Go 1.16 and 1.17.
+  * Skip IsFloat64AJSONInteger(math.SmallestNonzeroFloat64/2) test.
+    Go 1.17 increased the precision of math.SmallestNonzeroFloat64, so now
+    math.SmallestNonzeroFloat64/2 correctly returns the integer 0, whereas
+    Go <= 1.16 returned 5e-324, a non-integer.
+    See https://github.com/go-openapi/swag/issues/59 and
+    https://github.com/golang/go/issues/44058
+  * Update Maintainer email address to team+pkg-go@tracker.debian.org
+  * Change Section from devel to golang
+  * Bump debhelper dependency to "Build-Depends: debhelper-compat (= 13)"
+  * Bump Standards-Version to 4.6.0 (no change)
+  * Add "Rules-Requires-Root: no" to debian/control
+  * Mark library package with "Multi-Arch: foreign"
+  * Add myself to the list of Uploaders
+
+ -- Anthony Fok <foka@debian.org>  Tue, 19 Oct 2021 07:16:06 -0600
+
+golang-github-go-openapi-swag (1:0.15.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Martina Ferrari ]
+  * New upstream release.
+  * Automatic cme fixes.
+  * Update gbp.conf.
+  * Add watchfile.
+  * Add new dependency.
+  * Disable test that fails on go >> 1.11.
+
+ -- Martina Ferrari <tincho@debian.org>  Tue, 29 Oct 2019 08:09:01 +0000
+
+golang-github-go-openapi-swag (1:0.0~git20160704.0.1d0bd11-1) unstable; urgency=medium
+
+  * Package earlier upstream snapshot as B-D for Kubernetes.
+
+ -- Tim Potter <tpot@hpe.com>  Wed, 22 Feb 2017 08:31:45 +1100
+
+golang-github-go-openapi-swag (0.0~git20161024.0.3b6d86c-1) unstable; urgency=medium
+
+  * Initial release (Closes: #853813)
+
+ -- Tim Potter <tpot@hpe.com>  Tue, 29 Nov 2016 14:08:58 +1100
